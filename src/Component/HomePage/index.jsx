@@ -4,7 +4,7 @@ import Products from '../DataGrid'
 
 function Home() {
   return (
-    <div style={{marginTop: "100px"}}>
+    <div style={{marginTop: "100px", display: "flex", alignItems: "center", justifyContent: "center"}}>
       <Filter />
       <Products />
     </div>

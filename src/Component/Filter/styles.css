@@ -1,4 +1,5 @@
 .filter-wrapper{
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,20 +8,25 @@
     top: 100px;
     left: 0;
     right: 0;
-    background-color: white;
+    /* background-color: lightgray; */
+    /* padding: 20px; */
 }
 .filters{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+.filter-heading{
+    padding: 15px;
+}
 label{
     margin-right: 10px;
 }
 
 .filters > select {
-    margin-right: 50px;
+    margin-right: 30px;
+    height: 30px;
+    border-radius: 10px;
 }
 
 @media (max-width: 760px){

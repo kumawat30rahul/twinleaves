@@ -137,7 +137,7 @@ function Products() {
   };
 
   return (
-    <div className="data-grid-wrapper-styles" style={{ height: 900, width: '100%', position: "fixed", top: '280px', left: '0', right: '0' }}>
+    <div className="data-grid-wrapper-styles" style={{ height: 900, width: '100%', position: "fixed", top: '260px', left: '0', right: '0' }}>
       {isLoading ? (
         <div
           style={{
