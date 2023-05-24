@@ -8,6 +8,8 @@ import './styles.css'
 import PaginationButtons from '../Pagination';
 import { useNavigate  } from 'react-router-dom';
 
+
+// cloumns for the data grid
 const columns = [
   { field: 'id', headerName: 'ID', width: 50, hide: true },
   {
@@ -31,15 +33,17 @@ const columns = [
 ];
 
 function Products() {
+  //states===============================================================================
   const [productRows, setProductRows] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+
+  // usecontext state from App.jsx ========================================================
   const { productData, setProductData, categoryFilterValue, sorting, search, paginationValue } = useContext(ProductData)
   const navigate = useNavigate ()
-  useEffect(() => {
-    fetchingProductData();
-  }, [paginationValue]);
+
+  //fetching the data========================================================================
 
   const fetchingProductData = async () => {
     try {
@@ -57,9 +61,17 @@ function Products() {
   };
 
   useEffect(() => {
+    fetchingProductData();
+  }, [paginationValue]);
+
+  //category filter ======================================================================================
+
+  useEffect(() => {
     const newProductsData = productData.filter((product) => categoryFilterValue === product.category_level_1)
     setProductRows(newProductsData)
   }, [categoryFilterValue])
+
+  //sorting=================================================================================================
 
   useEffect(() => {
     if (sorting === "Ascending") {
@@ -73,6 +85,8 @@ function Products() {
     }
   }, [sorting])
 
+  //searching functionality======================================================================================
+
   useEffect(() => {
     const searchedData = productData.filter((product) => product.name.toLowerCase().includes(search.toLowerCase()))
     console.log("searchedData", searchedData);
@@ -80,10 +94,7 @@ function Products() {
   }, [search])
 
 
-  useEffect(() => {
-    console.log("products ==========>>>>>>>>>", productRows);
-  }, [productRows, sorting]);
-
+  //datagrid rows mapped through api data=========================================================================
   const rows = productRows.map((product, index) => {
     return {
       id: index + 1,
@@ -94,6 +105,7 @@ function Products() {
     };
   });
 
+  //resize of row heights====================================================
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -111,9 +123,13 @@ function Products() {
       return 250; // Default row height for screens above 768 pixels width
     }
   };
+
+//custom class for rows=========================================================
   const getRowClassName = (params) => {
     return 'custom-row-class';
   };
+
+//navigation to detailed page=============================================================
   const handleRowClick = (params) => {
     const productName  = params.row.lastName;
     const productData = productRows.find((product) => product.name === productName)
