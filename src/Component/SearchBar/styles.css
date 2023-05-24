@@ -1,0 +1,38 @@
+.search-wrapper{
+    height: 40px;
+    width: 60%;
+    border: none;
+    background-color: white;
+    border-radius: 100vw 100vw 100vw 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-wrapper:hover{
+    cursor: pointer;
+    border: 2px solid darkgrey;
+}
+
+.search-input{
+    height: 100%;
+    width: 90%;
+    outline: none;
+    background-color: transparent;
+    padding-left: 20px;
+    border: none;
+}
+
+.search-icon{
+    cursor: pointer;
+    background-color: transparent;
+    margin-right: 15px;
+    font-size: 2rem !important;
+    color: black;
+    transition: all 0.3s;
+
+}
+.search-icon:hover{
+    transform: scale(1.08);
+    transition: all 0.3s;
+}

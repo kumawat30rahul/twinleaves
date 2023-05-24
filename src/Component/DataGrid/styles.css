@@ -1,0 +1,39 @@
+.custom-row-class{
+    cursor: pointer;
+    background-color: rgba(175, 171, 171, 0.082);
+    border-radius: 20px;
+    border: none !important;
+
+}
+.custom-row-class:hover{
+    background-color: rgba(175, 171, 171, 0.178) !important;
+}
+
+.image{
+    border-radius: 10px;
+    box-shadow: 0 0 5px  black;
+}
+
+
+@media (max-width: 768px){
+    .image{
+        height: 100px !important;
+        width: auto !important;
+    }
+    .custom-row-class{
+        height: 150px !important;
+    }
+
+    .data-grid-wrapper-styles{
+        position: fixed;
+        top: 320px !important;
+    }
+}
+
+@media (max-width: 425px){
+    .image{
+        height: 50px !important;
+        width: auto !important;
+    }
+ 
+}

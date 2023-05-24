@@ -1,0 +1,35 @@
+.filter-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label{
+    margin-right: 10px;
+}
+
+.filters > select {
+    margin-right: 50px;
+}
+
+@media (max-width: 760px){
+    .filters{
+        flex-direction: column;
+    }
+    .filters > select {
+        margin-left: 70px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
